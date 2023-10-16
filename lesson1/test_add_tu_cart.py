@@ -1,10 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time
+
 
 
 driver = webdriver.Chrome()
-
 
 
 def test_add_item_in_the_cart():
@@ -26,14 +25,8 @@ def test_add_item_in_the_cart():
     add_button.click()
 
 
-
     card = driver.find_element(By.CSS_SELECTOR, "a[class='shopping_cart_link']")
     card.click()
 
     text_after = driver.find_element(By.CSS_SELECTOR, "a[id='item_4_title_link']").text
-
-
     assert text_before == text_after
-
-
-
